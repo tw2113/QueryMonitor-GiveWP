@@ -44,8 +44,10 @@ class QueryMonitor_GiveWP {
 	public function include_outputters( $output ) {
 		if ( class_exists( 'QM_Output_Html' ) ) {
 			require 'outputters/constants.php';
+			require 'outputters/meta.php';
 		}
 		add_filter( 'qm/outputter/html', __NAMESPACE__ . '\register_qm_gwp_output_html_constants', 999, 2 );
+		add_filter( 'qm/outputter/html', __NAMESPACE__ . '\register_qm_gwp_output_html_meta', 999, 2 );
 
 		return $output;
 	}
@@ -53,8 +55,10 @@ class QueryMonitor_GiveWP {
 	public function includes() {
 		if ( class_exists( 'QM_Collector' ) ) {
 			require 'collectors/constants.php';
+			require 'collectors/meta.php';
 		}
 		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_constants', 999, 2 );
+		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_meta', 999, 2 );
 
 		require 'includes/conditionals.php';
 	}
