@@ -46,16 +46,6 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 			}
 		}
 	}
-
-	private function disp_boolean( $bool_text ) {
-		$bool_text = (string) $bool_text;
-		if ( empty( $bool_text ) || '0' === $bool_text || 'false' === $bool_text ) {
-			return 'false';
-		}
-
-		return 'true';
-	}
-
 }
 
 function register_qm_gwp_collectors_constants( array $collectors, \QueryMonitor $qm ) {
