@@ -23,9 +23,10 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 		$this->data['meta'] = [];
 
 		global $post;
+		$this->has_give_form( $post );
 
-		if ( isset( $post->post_type ) && 'give_forms' === $post->post_type && is_single( 'give_forms' ) ) {
-			$meta = get_post_meta( $post->ID );
+		if ( $this->give_has_form ) {
+			$meta = get_post_meta( $this->give_post_id );
 			foreach ( $meta as $key => $value ) {
 				if ( '_give' !== substr( $key, 0, 5 ) ) {
 					continue;
