@@ -6,6 +6,10 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 
 	public $id = 'qmgwp-meta';
 
+	private $give_post_id = 0;
+
+	private $give_has_form = false;
+
 	public function __construct() {
 		parent::__construct();
 	}
