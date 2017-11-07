@@ -20,7 +20,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 
 	// Gather our information to be used in our output.
 	public function process() {
-		$this->data['meta'] = [];
+		$this->data['meta'] = array();
 
 		global $post;
 		$this->has_give_form( $post );

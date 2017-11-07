@@ -9,7 +9,7 @@
  * Contributors: tw2113
  * Requires at least: 4.8
  * Tested up to: 4.8.3
- * Requires PHP: 5.4
+ * Requires PHP: 5.3
  * Stable tag: 1.0.0
  * Text Domain: query-monitor-givewp
  * License: MIT
@@ -37,8 +37,8 @@ class QueryMonitor_GiveWP {
 	}
 
 	public function do_hooks() {
-		add_action( 'plugins_loaded', [ $this, 'includes' ], 0 );
-		add_filter( 'qm/outputter/html', [ $this, 'include_outputters' ], 0 );
+		add_action( 'plugins_loaded', array( $this, 'includes' ), 0 );
+		add_filter( 'qm/outputter/html', array( $this, 'include_outputters' ), 0 );
 	}
 
 	public function include_outputters( $output ) {

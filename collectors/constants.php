@@ -16,9 +16,9 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 
 	// Gather our information to be used in our output.
 	public function process() {
-		$this->data['constants'] = [];
+		$this->data['constants'] = array();
 
-		$constants = [
+		$constants = array(
 			'GIVE_API_VERSION',
 			'GIVE_DISABLE_FORMS_REWRITE',
 			'GIVE_DOING_API',
@@ -32,7 +32,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 			'GIVE_UNIT_TESTS',
 			'GIVE_USE_PHP_SESSIONS',
 			'GIVE_VERSION',
-		];
+		);
 
 		foreach( $constants as $constant ) {
 			if ( defined( $constant ) ) {

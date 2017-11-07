@@ -60,9 +60,9 @@ class QueryMonitor_GiveWP_HTML_Meta extends \QM_Output_Html {
 	}
 
 	public function admin_menu( array $menu ) {
-		$add = [
+		$add = array(
 			'title' => sprintf( esc_html__( '%s Meta', 'query-monitor-givewp' ), 'GiveWP' ),
-		];
+		);
 
 		$menu[] = $this->menu( $add );
 
