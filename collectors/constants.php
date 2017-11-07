@@ -18,7 +18,14 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 	public function process() {
 		$this->data['constants'] = array();
 
-		$constants = array(
+		/**
+		 * Filters the constants to check for with Query Monitor GiveWP.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array $value Array of constants to check for.
+		 */
+		$constants = apply_filters( 'qmgwp_constants', array(
 			'GIVE_API_VERSION',
 			'GIVE_DISABLE_FORMS_REWRITE',
 			'GIVE_DOING_API',
@@ -32,7 +39,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 			'GIVE_UNIT_TESTS',
 			'GIVE_USE_PHP_SESSIONS',
 			'GIVE_VERSION',
-		);
+		) );
 
 		foreach( $constants as $constant ) {
 			if ( defined( $constant ) ) {
