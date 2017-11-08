@@ -94,7 +94,7 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
  *
  * @since 1.0.0
  *
- * @param array          $output     Array of HTML output instances to render
+ * @param array          $output     Array of HTML output instances to render.
  * @param \QM_Collectors $collectors Collector object.
  *
  * @return array
