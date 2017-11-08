@@ -10,6 +10,11 @@ namespace tw2113\qmgwp;
 
 class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 
+	/**
+	 * ID for our collector instance.
+	 *
+	 * @var string
+	 */
 	public $id = 'qmgwp-meta';
 
 	private $give_post_id = 0;
@@ -20,11 +25,22 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 		parent::__construct();
 	}
 
+	/**
+	 * Sets a usable name ofr our collector.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
 	public function name() {
 		return 'GiveWP';
 	}
 
-	// Gather our information to be used in our output.
+	/**
+	 * Collect data to make available for the HTML output.
+	 *
+	 * @since 1.0.0
+	 */
 	public function process() {
 		$this->data['meta'] = array();
 
@@ -42,6 +58,13 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 		}
 	}
 
+	/**
+	 * Determine if a given request has a GiveWP form available.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param \WP_Post $post
+	 */
 	private function has_give_form( \WP_Post $post ) {
 		if ( is_admin() ) {
 			return;
@@ -89,6 +112,16 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 	}
 }
 
+/**
+ * Initiate an instance for Collector class for the meta section.
+ *
+ * @since 1.0.0
+ *
+ * @param array         $collectors Array of current instantiated collectors.
+ * @param \QueryMonitor $qm         Query Monitor instance.
+ *
+ * @return array
+ */
 function register_qm_gwp_collectors_meta( array $collectors, \QueryMonitor $qm ) {
 	$collectors['qmgwp-meta'] = new QueryMonitor_GiveWP_Collector_Meta;
 
