@@ -10,17 +10,32 @@ namespace tw2113\qmgwp;
 
 class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 
+	/**
+	 * ID for our collector instance.
+	 * @var string
+	 */
 	public $id = 'qmgwp-constants';
 
 	public function __construct() {
 		parent::__construct();
 	}
 
+	/**
+	 * Sets a usable name ofr our collector.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return string
+	 */
 	public function name() {
 		return 'GiveWP';
 	}
 
-	// Gather our information to be used in our output.
+	/**
+	 * Collect data to make available for the HTML output.
+	 *
+	 * @since 1.0.0
+	 */
 	public function process() {
 		$this->data['constants'] = array();
 
@@ -61,6 +76,16 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 	}
 }
 
+/**
+ * Initiate an instance for Collector class for the constants section.
+ *
+ * @since 1.0.0
+ *
+ * @param array         $collectors Array of current instantiated collectors.
+ * @param \QueryMonitor $qm         Query Monitor instance.
+ *
+ * @return array
+ */
 function register_qm_gwp_collectors_constants( array $collectors, \QueryMonitor $qm ) {
 	$collectors['qmgwp-constants'] = new QueryMonitor_GiveWP_Collector_Constants;
 
