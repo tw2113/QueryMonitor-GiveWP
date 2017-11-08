@@ -13,7 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Returns an array of extra conditions to check for with current request.
+ *
+ * @since 1.0.0
+ *
+ * @param array $conds Array of conditional tags to check for.
+ * @return array
+ */
 add_filter( 'query_monitor_conditionals', function( $conds ) {
+
 	/**
 	 * Filters the conditional tags to check for with Query Monitor GiveWP.
 	 *
