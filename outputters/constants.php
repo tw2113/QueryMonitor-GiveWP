@@ -21,6 +21,11 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
 		add_filter( 'qm/output/menus', array( $this, 'admin_menu' ), 101 );
 	}
 
+	/**
+	 * Construct the output for the Query Monitor content section for GiveWP constants.
+	 *
+	 * @since 1.0.0
+	 */
 	public function output() {
 		$data = $this->collector->get_data();
 
@@ -65,6 +70,14 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
 		<?php
 	}
 
+	/**
+	 * Add our constants section to the Query Monitor dropdown from admin bar.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $menu Array of menu items to render.
+	 * @return array
+	 */
 	public function admin_menu( array $menu ) {
 		$add = array(
 			'title' => sprintf( esc_html__( '%s Constants', 'query-monitor-givewp' ), 'GiveWP' ),
@@ -76,6 +89,16 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
 	}
 }
 
+/**
+ * Initiate an instance for HTML output for the constants section.
+ *
+ * @since 1.0.0
+ *
+ * @param array          $output     Array of HTML output instances to render
+ * @param \QM_Collectors $collectors Collector object.
+ *
+ * @return array
+ */
 function register_qm_gwp_output_html_constants( array $output, \QM_Collectors $collectors ) {
 	if ( $collector = \QM_Collectors::get( 'qmgwp-constants' ) ) {
 		$output['qmgwp-constants'] = new QueryMonitor_GiveWP_HTML_Constants( $collector );
