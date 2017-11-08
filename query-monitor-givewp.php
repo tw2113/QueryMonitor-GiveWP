@@ -7,8 +7,8 @@
  */
 
 /*
- * Plugin Name: Query Monitor GiveWP Conditionals
- * Description: Add GiveWP conditionals to Query Monitor
+ * Plugin Name: Query Monitor GiveWP
+ * Description: Add GiveWP to Query Monitor
  * Version: 1.0.0
  * Plugin URI: https://michaelbox.net
  * Author: Michael Beckwith
