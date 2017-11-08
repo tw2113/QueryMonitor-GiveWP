@@ -65,11 +65,12 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 	 *
 	 * @param \WP_Post $post
 	 */
-	private function find_give_form( \WP_Post $post ) {
+	private function find_give_form( $post ) {
 		if ( is_admin() ) {
 			return;
 		}
-		if ( 'give_forms' === $post->post_type ) {
+
+		if ( $post instanceof \WP_Post && 'give_forms' === $post->post_type ) {
 			if ( ! is_singular() ) {
 				return;
 			}
