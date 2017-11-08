@@ -1,4 +1,10 @@
 <?php
+/**
+ * QueryMonitor GiveWP Conditionals file.
+ *
+ * @package qmgwp
+ * @since   1.0.0
+ */
 
 namespace tw2113\qmgwp;
 

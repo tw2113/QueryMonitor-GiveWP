@@ -1,4 +1,11 @@
 <?php
+/**
+ * QueryMonitor GiveWP loader.
+ *
+ * @package qmgwp
+ * @since   1.0.0
+ */
+
 /*
  * Plugin Name: Query Monitor GiveWP Conditionals
  * Description: Add GiveWP conditionals to Query Monitor
