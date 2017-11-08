@@ -45,7 +45,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 		$this->data['meta'] = array();
 
 		global $post;
-		$this->has_give_form( $post );
+		$this->find_give_form( $post );
 
 		if ( $this->give_has_form ) {
 			$meta = get_post_meta( $this->give_post_id );
@@ -65,7 +65,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 	 *
 	 * @param \WP_Post $post
 	 */
-	private function has_give_form( \WP_Post $post ) {
+	private function find_give_form( \WP_Post $post ) {
 		if ( is_admin() ) {
 			return;
 		}
