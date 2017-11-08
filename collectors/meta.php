@@ -80,15 +80,19 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 			return;
 		}
 
-		// @todo Figure out why parsing isn't returning attributes correctly.
-		$all_shortcode_atts = shortcode_parse_atts( $post->post_content );
-		if ( ! empty( $all_shortcode_atts['id'] ) ) {
-			$maybe_give_form = get_post( absint( $all_shortcode_atts['id'] ) );
-			if ( $maybe_give_form instanceof \WP_Post && 'give_forms' === $maybe_give_form->post_type ) {
-				$this->give_has_form = true;
-				$this->give_post_id  = $maybe_give_form->ID;
+		$regex = get_shortcode_regex();
+		preg_match( '/' . $regex . '/s', $post->post_content, $matches );
 
-				return;
+		if ( 'give_form' === $matches[2] ) {
+			$all_shortcode_atts = shortcode_parse_atts( $matches[3] );
+			if ( ! empty( $all_shortcode_atts['id'] ) ) {
+				$maybe_give_form = get_post( absint( $all_shortcode_atts['id'] ) );
+				if ( $maybe_give_form instanceof \WP_Post && 'give_forms' === $maybe_give_form->post_type ) {
+					$this->give_has_form = true;
+					$this->give_post_id  = $maybe_give_form->ID;
+
+					return;
+				}
 			}
 		}
 
