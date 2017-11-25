@@ -16,6 +16,12 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 	 */
 	public $id = 'qmgwp-constants';
 
+	/**
+	 * Data to be used in our output.
+	 * @var string
+	 */
+	public $data = '';
+
 	public function __construct() {
 		parent::__construct();
 	}
