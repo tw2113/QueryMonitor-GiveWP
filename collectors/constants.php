@@ -8,6 +8,16 @@
 
 namespace tw2113\qmgwp;
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Class to collect data for the Give Constants section.
+ *
+ * @since 1.0.0
+ */
 class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 
 	/**
