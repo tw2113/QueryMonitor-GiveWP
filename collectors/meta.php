@@ -8,19 +8,47 @@
 
 namespace tw2113\qmgwp;
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Class to collect data for the Give Meta section.
+ *
+ * @since 1.0.0
+ */
 class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 
 	/**
 	 * ID for our collector instance.
 	 *
+	 * @since 1.0.0
 	 * @var string
 	 */
 	public $id = 'qmgwp-meta';
 
+	/**
+	 * ID for the Give form post.
+	 *
+	 * @since 1.0.0
+	 * @var int
+	 */
 	private $give_post_id = 0;
 
+	/**
+	 * Whether or not a Give form was found.
+	 *
+	 * @since 1.0.0
+	 * @var bool
+	 */
 	private $give_has_form = false;
 
+	/**
+	 * QueryMonitor_GiveWP_Collector_Meta constructor.
+	 *
+	 * @since 1.0.0
+	 */
 	public function __construct() {
 		parent::__construct();
 	}
@@ -66,7 +94,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param \WP_Post $post
+	 * @param $post
 	 */
 	private function find_give_form( $post ) {
 		if ( is_admin() ) {
@@ -127,7 +155,6 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
  *
  * @param array         $collectors Array of current instantiated collectors.
  * @param \QueryMonitor $qm         Query Monitor instance.
- *
  * @return array
  */
 function register_qm_gwp_collectors_meta( array $collectors, \QueryMonitor $qm ) {
