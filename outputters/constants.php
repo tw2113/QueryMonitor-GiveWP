@@ -13,8 +13,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Class to construct HTML output for Constants section.
+ *
+ * @since 1.0.0
+ */
 class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
 
+	/**
+	 * QueryMonitor_GiveWP_HTML_Constants constructor.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param \QM_Collector $collector
+	 */
 	public function __construct( \QM_Collector $collector ) {
 		parent::__construct( $collector );
 
@@ -96,7 +108,6 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
  *
  * @param array          $output     Array of HTML output instances to render.
  * @param \QM_Collectors $collectors Collector object.
- *
  * @return array
  */
 function register_qm_gwp_output_html_constants( array $output, \QM_Collectors $collectors ) {
