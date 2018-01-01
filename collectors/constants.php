@@ -22,16 +22,25 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 
 	/**
 	 * ID for our collector instance.
+	 *
+	 * @since 1.0.0
 	 * @var string
 	 */
 	public $id = 'qmgwp-constants';
 
 	/**
 	 * Data to be used in our output.
+	 *
+	 * @since 1.0.0
 	 * @var string
 	 */
 	public $data = '';
 
+	/**
+	 * QueryMonitor_GiveWP_Collector_Constants constructor.
+	 *
+	 * @since 1.0.0
+	 */
 	public function __construct() {
 		parent::__construct();
 	}
@@ -99,7 +108,6 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
  *
  * @param array         $collectors Array of current instantiated collectors.
  * @param \QueryMonitor $qm         Query Monitor instance.
- *
  * @return array
  */
 function register_qm_gwp_collectors_constants( array $collectors, \QueryMonitor $qm ) {
