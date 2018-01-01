@@ -37,17 +37,31 @@ if (
 	return;
 }
 
+/**
+ * Construct our plugin.
+ *
+ * @since 1.0.0
+ */
 class QueryMonitor_GiveWP {
 
-	public function __construct() {
-
-	}
-
+	/**
+	 * Execute our hooks.
+	 *
+	 * @since 1.0.0
+	 */
 	public function do_hooks() {
 		add_action( 'plugins_loaded', array( $this, 'includes' ), 0 );
 		add_filter( 'qm/outputter/html', array( $this, 'include_outputters' ), 0 );
 	}
 
+	/**
+	 * Wire up our outputter data.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param $output
+	 * @return mixed
+	 */
 	public function include_outputters( $output ) {
 		if ( class_exists( 'QM_Output_Html' ) ) {
 			require 'outputters/constants.php';
@@ -59,6 +73,11 @@ class QueryMonitor_GiveWP {
 		return $output;
 	}
 
+	/**
+	 * Wire up our collectiors and other includes.
+	 *
+	 * @since 1.0.0
+	 */
 	public function includes() {
 		if ( class_exists( 'QM_Collector' ) ) {
 			require 'collectors/constants.php';
