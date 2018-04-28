@@ -79,8 +79,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 			$meta = get_post_meta( $this->give_post_id );
 			foreach ( $meta as $key => $value ) {
 				if (
-					'_give' !== substr( $key, 0, 5 ) ||
-					'give' !== substr( $key, 0, 4 )
+					'_give' !== substr( $key, 0, 5 )
 				) {
 					continue;
 				}
