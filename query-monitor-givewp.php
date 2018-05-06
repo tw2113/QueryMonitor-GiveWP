@@ -68,6 +68,13 @@ class QueryMonitor_GiveWP {
 		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_meta', 999, 2 );
 
 		require 'includes/conditionals.php';
+
+		/**
+		 * Fires at the end of our primary class includes method.
+		 *
+		 * @since 1.0.0
+		 */
+		do_action( 'qmgwp_includes' );
 	}
 
 	/**
@@ -75,7 +82,7 @@ class QueryMonitor_GiveWP {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param $output
+	 * @param array $output Array of output for Query Monitor.
 	 * @return mixed
 	 */
 	public function include_outputters( $output ) {
@@ -85,6 +92,15 @@ class QueryMonitor_GiveWP {
 		}
 		add_filter( 'qm/outputter/html', __NAMESPACE__ . '\register_qm_gwp_output_html_constants', 999, 2 );
 		add_filter( 'qm/outputter/html', __NAMESPACE__ . '\register_qm_gwp_output_html_meta', 999, 2 );
+
+		/**
+		 * Fires at the end of our primary class include_outputters method.
+		 *
+		 * @since 1.0.0
+		 *
+		 * @param array @output Array of output for Query Monitor.
+		 */
+		do_action( 'qmgwp_include_outputters', $output );
 
 		return $output;
 	}
