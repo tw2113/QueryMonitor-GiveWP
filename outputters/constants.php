@@ -111,7 +111,8 @@ class QueryMonitor_GiveWP_HTML_Constants extends \QM_Output_Html {
  * @return array
  */
 function register_qm_gwp_output_html_constants( array $output, \QM_Collectors $collectors ) {
-	if ( $collector = \QM_Collectors::get( 'qmgwp-constants' ) ) {
+	$collector = \QM_Collectors::get( 'qmgwp-constants' );
+	if ( $collector ) {
 		$output['qmgwp-constants'] = new QueryMonitor_GiveWP_HTML_Constants( $collector );
 	}
 
