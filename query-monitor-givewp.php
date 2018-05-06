@@ -15,7 +15,7 @@
  * Author URI: https://michaelbox.net
  * Contributors: tw2113
  * Requires at least: 4.8
- * Tested up to: 4.8.3
+ * Tested up to: 4.9.5
  * Requires PHP: 5.3
  * Stable tag: 1.0.0
  * Text Domain: query-monitor-givewp
