@@ -91,7 +91,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 				$this->data['constants'][ $constant ] = (
 					is_bool( constant( $constant ) )
 				)
-					? $this->format_bool_constant( constant( $constant ) )
+					? self::format_bool_constant( constant( $constant ) )
 					: constant( $constant );
 			} else {
 				$this->data['constants'][ $constant ] = esc_html__( 'undefined', 'query-monitor-givewp' );
