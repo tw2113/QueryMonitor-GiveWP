@@ -72,7 +72,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 		 * @param array $value Array of constants to check for.
 		 */
 		$constants = apply_filters( 'qmgwp_constants', array(
-			'GIVE_API_VERSION',
+			'CAL_GREGORIAN',
 			'GIVE_DISABLE_FORMS_REWRITE',
 			'GIVE_DOING_API',
 			'GIVE_FORMS_SLUG',
@@ -82,9 +82,8 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 			'GIVE_PLUGIN_URL',
 			'GIVE_REQUIRED_PHP_VERSION',
 			'GIVE_SLUG',
-			'GIVE_UNIT_TESTS',
-			'GIVE_USE_PHP_SESSIONS',
 			'GIVE_VERSION',
+			'WP_SESSION_COOKIE',
 		) );
 
 		foreach( $constants as $constant ) {
