@@ -111,7 +111,8 @@ class QueryMonitor_GiveWP_HTML_Meta extends \QM_Output_Html {
  * @return array
  */
 function register_qm_gwp_output_html_meta( array $output, \QM_Collectors $collectors ) {
-	if ( $collector = \QM_Collectors::get( 'qmgwp-meta' ) ) {
+	$collector = \QM_Collectors::get( 'qmgwp-meta' );
+	if ( $collector ) {
 		$output['qmgwp-meta'] = new QueryMonitor_GiveWP_HTML_Meta( $collector );
 	}
 
