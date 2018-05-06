@@ -55,6 +55,22 @@ class QueryMonitor_GiveWP {
 	}
 
 	/**
+	 * Wire up our collectiors and other includes.
+	 *
+	 * @since 1.0.0
+	 */
+	public function includes() {
+		if ( class_exists( 'QM_Collector' ) ) {
+			require 'collectors/constants.php';
+			require 'collectors/meta.php';
+		}
+		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_constants', 999, 2 );
+		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_meta', 999, 2 );
+
+		require 'includes/conditionals.php';
+	}
+
+	/**
 	 * Wire up our outputter data.
 	 *
 	 * @since 1.0.0
@@ -71,22 +87,6 @@ class QueryMonitor_GiveWP {
 		add_filter( 'qm/outputter/html', __NAMESPACE__ . '\register_qm_gwp_output_html_meta', 999, 2 );
 
 		return $output;
-	}
-
-	/**
-	 * Wire up our collectiors and other includes.
-	 *
-	 * @since 1.0.0
-	 */
-	public function includes() {
-		if ( class_exists( 'QM_Collector' ) ) {
-			require 'collectors/constants.php';
-			require 'collectors/meta.php';
-		}
-		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_constants', 999, 2 );
-		add_filter( 'qm/collectors', __NAMESPACE__ . '\register_qm_gwp_collectors_meta', 999, 2 );
-
-		require 'includes/conditionals.php';
 	}
 
 }
