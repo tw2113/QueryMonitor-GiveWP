@@ -12,7 +12,6 @@
  * Version: 1.0.0
  * Plugin URI: https://michaelbox.net
  * Author: Michael Beckwith
- * Author URI: https://michaelbox.net
  * Contributors: tw2113
  * Requires at least: 4.8
  * Tested up to: 4.9.8
