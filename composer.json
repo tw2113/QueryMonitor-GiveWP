@@ -3,7 +3,7 @@
     "description": "Add GiveWP context and state support to Query Monitor",
     "type": "wordpress-plugin",
     "require": {
-        "composer/installers": "^1.4",
+        "composer/installers": "^1.4"
     },
     "license": "MIT",
     "authors": [
