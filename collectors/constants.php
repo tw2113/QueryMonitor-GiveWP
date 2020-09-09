@@ -71,7 +71,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 		 *
 		 * @param array $value Array of constants to check for.
 		 */
-		$constants = apply_filters( 'qmgwp_constants', array(
+		$constants = apply_filters( 'qmgwp_constants', [
 			'CAL_GREGORIAN',
 			'GIVE_DISABLE_FORMS_REWRITE',
 			'GIVE_DOING_API',
@@ -82,9 +82,13 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 			'GIVE_PLUGIN_URL',
 			'GIVE_REQUIRED_PHP_VERSION',
 			'GIVE_SLUG',
+			'GIVE_STRIPE_BASENAME',
 			'GIVE_VERSION',
 			'WP_SESSION_COOKIE',
-		) );
+			'DONOTCACHEPAGE',
+			'DONOTCACHEOBJECT',
+			'DONOTCACHEDB',
+		] );
 
 		foreach( $constants as $constant ) {
 			if ( defined( $constant ) ) {
