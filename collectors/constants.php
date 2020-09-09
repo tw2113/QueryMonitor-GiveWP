@@ -34,7 +34,7 @@ class QueryMonitor_GiveWP_Collector_Constants extends \QM_Collector {
 	 * @since 1.0.0
 	 * @var string
 	 */
-	public $data = '';
+	public $data = [];
 
 	/**
 	 * QueryMonitor_GiveWP_Collector_Constants constructor.

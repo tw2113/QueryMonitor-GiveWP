@@ -44,6 +44,8 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 	 */
 	private $give_has_form = false;
 
+	public $data = [];
+
 	/**
 	 * QueryMonitor_GiveWP_Collector_Meta constructor.
 	 *
