@@ -115,7 +115,7 @@ class QueryMonitor_GiveWP_Collector_Meta extends \QM_Collector {
 		$regex = get_shortcode_regex();
 		preg_match( '/' . $regex . '/s', $post->post_content, $matches );
 
-		if ( 'give_form' === $matches[2] ) {
+		if ( ! empty( $matches[2] ) && 'give_form' === $matches[2] ) {
 			$all_shortcode_atts = shortcode_parse_atts( $matches[3] );
 			if ( ! empty( $all_shortcode_atts['id'] ) ) {
 				$maybe_give_form = get_post( absint( $all_shortcode_atts['id'] ) );
