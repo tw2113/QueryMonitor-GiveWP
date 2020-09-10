@@ -35,5 +35,15 @@ add_filter( 'query_monitor_conditionals', function( $conds ) {
 		'is_give_category',
 		'is_give_tag',
 		'is_give_taxonomy',
+		'give_is_donation_history_page',
+		'give_is_add_new_form_page',
+		'give_is_success_page',
+		'give_is_failed_transaction_page',
+		'give_is_history_page',
+		'give_is_admin_page',
+		'give_is_test_mode',
+		'give_shortcode_button_condition',
+		'give_can_checkout',
+		'give_stripe_is_any_payment_method_active',
 	) ) );
 } );
